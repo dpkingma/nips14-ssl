@@ -31,7 +31,7 @@ def main(n_z, n_hidden, dataset, seed, gfx=True, _size=None):
     print 'logdir:', logdir
     
     np.random.seed(seed)
-        
+    
     # Init data
     if dataset == 'mnist':
         '''

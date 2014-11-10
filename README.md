@@ -12,6 +12,8 @@ Please cite this paper when using this code for your research.
 
 _Warning_: This code is far from fully commented.
 
+For questions and bug reports, please send me an e-mail at _dpkingma[at]gmail.com_.
+
 ## Prerequisites
 
 1. Make sure that recent versions of Python (>2.7) and Theano are installed.
