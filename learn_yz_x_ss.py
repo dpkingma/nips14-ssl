@@ -39,7 +39,7 @@ def main(n_passes, n_labeled, n_z, n_hidden, dataset, seed, alpha, n_minibatches
         dim_input = (size,size)
         
         # Load model for feature extraction
-        path = 'mnist_z_x_50-600-600/'
+        path = 'models/mnist_z_x_50-500-500_longrun/' #'models/mnist_z_x_50-600-600/'
         l1_v = ndict.loadz(path+'v.ndict.tar.gz')
         l1_w = ndict.loadz(path+'w.ndict.tar.gz')
         from anglepy.models.VAE_Z_X import VAE_Z_X
