@@ -42,8 +42,9 @@ def main(n_passes, n_labeled, n_z, n_hidden, dataset, seed, alpha, n_minibatches
         path = 'models/mnist_z_x_50-500-500_longrun/' #'models/mnist_z_x_50-600-600/'
         l1_v = ndict.loadz(path+'v.ndict.tar.gz')
         l1_w = ndict.loadz(path+'w.ndict.tar.gz')
+        n_h = (500,500)
         from anglepy.models.VAE_Z_X import VAE_Z_X
-        l1_model = VAE_Z_X(n_x=28*28, n_hidden_q=(600,600), n_z=50, n_hidden_p=(600,600), nonlinear_q='softplus', nonlinear_p='softplus', type_px='bernoulli', type_qz='gaussianmarg', type_pz='gaussianmarg', prior_sd=1)
+        l1_model = VAE_Z_X(n_x=28*28, n_hidden_q=n_h, n_z=50, n_hidden_p=n_h, nonlinear_q='softplus', nonlinear_p='softplus', type_px='bernoulli', type_qz='gaussianmarg', type_pz='gaussianmarg', prior_sd=1)
         
         # Load dataset
         import anglepy.data.mnist as mnist
