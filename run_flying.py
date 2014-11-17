@@ -8,7 +8,6 @@ import numpy.random
 import theano, theano.tensor as T
 import anglepy as ap
 import anglepy.models as apmodels
-import anglepy.hmc as hmc
 import anglepy.ndict as ndict
 import anglepy.paramgraphics as paramgraphics
 
