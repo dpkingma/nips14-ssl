@@ -1,6 +1,4 @@
 import sys
-sys.path.append('..')
-sys.path.append('../../data/')
 
 import math, os, time, scipy.stats, numpy as np, pylab, Image, PIL.Image
 import matplotlib.pyplot as plt, matplotlib.cm as cm

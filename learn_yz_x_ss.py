@@ -2,7 +2,6 @@ import sys
 
 import os, numpy as np
 import scipy.stats
-import mnist
 
 import anglepy.paramgraphics as paramgraphics
 import anglepy.ndict as ndict
