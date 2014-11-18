@@ -73,8 +73,10 @@ class GPUVAE_YZ_X(ap.GPUVAEModel):
         nonlinear_q = nonlinear[self.nonlinear_q]
         nonlinear_p = nonlinear[self.nonlinear_p]
         
-        rng = rng_curand.CURAND_RandomStreams(0)
-
+        #rng = rng_curand.CURAND_RandomStreams(0)
+        import theano.tensor.shared_randomstreams
+        rng = theano.tensor.shared_randomstreams.RandomStreams(0)
+        
         # Compute q(z|x,y)
         hidden_q = [nonlinear_q(T.dot(v['w0x'], x['x']) + T.dot(v['w0y'], x['y']) + T.dot(v['b0'], A))]
         for i in range(1, len(self.n_hidden_q)):
