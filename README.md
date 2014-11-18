@@ -33,7 +33,7 @@ export ML_DATA_PATH="$HOME/nips14-ssl/data"
 ## Flying through latent space of M2 model
 To generate movies of flying through latent-space of the M2 model, run:
 ```sh
-python run_flying.py [dataset] 1 [target_filename]
+python run_flying.py [dataset] 1 output.mkv
 ```
 where `dataset` is 'mnist' or 'svhn', and `target_filename` is the filename to save the movie file to. NOTE: This script requires ffmpeg to be installed.
 
