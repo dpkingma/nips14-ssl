@@ -16,14 +16,19 @@ For questions and bug reports, please send me an e-mail at _dpkingma[at]gmail.co
 
 ## Prerequisites
 
-1. Make sure that recent versions of Python (>2.7) and Theano are installed.
+1. Make sure that recent versions installed of:
+	- Python (version 2.7 or higher)
+	- Numpy (e.g. `pip install numpy`)
+	- Theano (e.g. `pip install Theano`)
 
-2. Clone this repository, e.g.:
+2. Set `floatX = float32` in the `[global]` section of Theano config (usually `~/.theanorc`). Alternatively you could prepend `THEANO_FLAGS=floatX=float32 ` to the python commands below. 
+
+3. Clone this repository, e.g.:
 ```sh
 git clone https://github.com/dpkingma/nips14-ssl.git
 ```
 
-3. Set an environment variable `ML_DATA_PATH` that points to subdirectory `data/`. For example, if you checked out this repo to your home directory:   
+4. Set an environment variable `ML_DATA_PATH` that points to subdirectory `data/`. For example, if you checked out this repo to your home directory:   
 ```sh
 export ML_DATA_PATH="$HOME/nips14-ssl/data"
 ```
