@@ -45,7 +45,7 @@ where `dataset` is 'mnist' or 'svhn', and `target_filename` is the filename to s
 ## Analogies
 Run:
 ```sh
-python run_analogies.py [dataset]
+python run_analogies.py [dataset] 1
 ```
 
 # Quantitative results
