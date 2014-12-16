@@ -14,7 +14,7 @@ import anglepy.paramgraphics as paramgraphics
 import preprocessing as pp
 
 dataset = sys.argv[1]
-draw_rows = bool(sys.argv[2])
+draw_rows = 1 #bool(sys.argv[2])
 
 if dataset == 'svhn':
     
@@ -80,6 +80,19 @@ if dataset == 'mnist':
         ndict.set_value(model.w, w)
         ndict.set_value(model.v, v)
         f_dec = lambda x: x
+
+if True:
+    # Some interesting analogies
+    if dataset == 'mnist':
+        idxs = np.asarray([[7910, 8150, 3623, 2645, 4066, 9660, 5083, 948, 2595, 2]]).T
+    elif dataset == 'svhn':
+        idxs = np.asarray([[2439, 820, 6590, 24106, 23978, 18466, 191, 20638, 8496, 8779, 25783, 3926, 91, 6904, 2865, 9107, 23066, 14359, 24415, 1754]]).T
+    n_batch_w = idxs.shape[0]
+else:
+    n_samples = 50
+    idxs = np.arange(test_y.shape[1])
+    np.random.shuffle(idxs)
+    idxs = idxs[:n_batch_w*n_samples].reshape((n_batch_w,-1))
         
 # Test model
 print "Test model"
@@ -98,19 +111,7 @@ if draw_rows:
 else:
     tile_shape1 = (1, n_batch_w)
     tile_shape2 = (n_y, n_batch_w)
-
-n_samples = 50
-idxs = np.arange(test_y.shape[1])
-np.random.shuffle(idxs)
-idxs = idxs[:n_batch_w*n_samples].reshape((n_batch_w,-1))
-
-if False:
-    # Some interesting analogies
-    if dataset == 'mnist':
-        idxs = np.asarray([[7910, 8150, 3623, 2645, 4066, 9660, 5083, 948, 2595, 2]]).T
-    elif dataset == 'svhn':
-        idxs = np.asarray([[2439, 820, 6590, 24106, 23978, 18466, 191, 20638, 8496, 8779]]).T
-      
+    
 for sample in range(idxs.shape[1]):
     # Get some random testset datapoints
     idx = idxs[:,sample]

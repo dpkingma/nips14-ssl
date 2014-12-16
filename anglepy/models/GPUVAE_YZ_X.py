@@ -8,7 +8,7 @@ from anglepy.misc import lazytheanofunc
 
 import math, inspect
 
-import theano.sandbox.cuda.rng_curand as rng_curand
+#import theano.sandbox.cuda.rng_curand as rng_curand
 
 def shared32(x, name=None, borrow=False):
     return theano.shared(np.asarray(x, dtype='float32'), name=name, borrow=borrow)
