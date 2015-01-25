@@ -31,7 +31,8 @@ def main(n_z, n_hidden, dataset, seed, comment, gfx=True):
     gfx_freq = 1
     
     weight_decay = 0
-    
+    f_enc, f_dec = lambda x:x, lambda x:x
+
     # Init data
     if dataset == 'mnist':
         import anglepy.data.mnist as mnist
